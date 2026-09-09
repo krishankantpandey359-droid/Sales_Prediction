@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is part of the CodeAlpha Data Science Internship. The main aim of this project is to study the relationship between advertising spending and sales and build a machine learning model to predict sales.
+This project is part of the  Data Science . The main aim of this project is to study the relationship between advertising spending and sales and build a machine learning model to predict sales.
 
 ## Dataset
 
