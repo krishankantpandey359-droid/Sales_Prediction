@@ -1,67 +1,54 @@
+# Sales Prediction using Python
 
+## Project overview
 
-## Project Overview
-
-This project analyses advertising expenditure and sales using exploratory analysis and regression models. The main aim of this project is to study the relationship between advertising spending and sales and build a machine learning model to predict sales.
+This project explores how advertising expenditure relates to sales. It compares Linear Regression and Random Forest Regression using a held-out test set.
 
 ## Dataset
 
-The dataset contains advertising data with the following columns:
+The notebook loads the Advertising dataset from the public `selva86/datasets` GitHub repository.
 
-- TV
-- Radio
-- Newspaper
-- Sales
+- Rows: 200
+- Features: `TV`, `radio`, `newspaper`
+- Target: `sales`
 
-The dataset contains 200 records.
+The notebook validates the required columns, numeric values, missing values and finite values before analysis. It removes exact duplicate rows and reports how many it removes. The notebook does not silently impute missing data.
 
-## Project Work
+## Workflow
 
-In this project, the following steps were performed:
+1. Load and validate the dataset.
+2. Inspect data types and descriptive statistics.
+3. Check missing values and remove exact duplicate rows.
+4. Explore sales distribution, feature relationships and correlations.
+5. Split data into training and test sets (80/20, `random_state=42`).
+6. Train Linear Regression and Random Forest Regression.
+7. Compare MAE, RMSE and R² on the same held-out test set.
+8. Review actual-versus-predicted values and Random Forest feature importance.
+9. Generate one example prediction.
 
-1. Loaded the dataset using Pandas.
-2. Checked the structure and basic information of the data.
-3. Checked and handled missing values and duplicate records.
-4. Performed Exploratory Data Analysis (EDA).
-5. Created graphs to understand the relationship between advertising and sales.
-6. Created a correlation heatmap.
-7. Selected advertising features for prediction.
-8. Trained a Linear Regression model.
-9. Trained a Random Forest Regression model.
-10. Compared model performance using MAE, RMSE and R² score.
-11. Compared actual sales with predicted sales.
-12. Analyzed feature importance.
-13. Used the trained model to make a sample sales prediction.
+## Saved evaluation results
 
-## Technologies Used
+The notebook's previously saved run reports:
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- Google Colab
+| Model | MAE | RMSE | R² |
+|---|---:|---:|---:|
+| Linear Regression | 1.461 | 1.782 | 0.899 |
+| Random Forest | 0.629 | 0.757 | 0.982 |
 
-## Machine Learning Models
+These metrics are from one fixed split of a small dataset. Re-run the notebook to reproduce them. A single split does not establish generalization to new markets or production data.
 
-### Linear Regression
+## Important limitations
 
-Linear Regression was used as a baseline model to understand the relationship between advertising expenditure and sales.
+- Correlation does not prove that advertising spend causes sales changes.
+- Random Forest feature importance is model-specific, not a causal effect.
+- The dataset has only 200 observations and three advertising predictors.
+- The example prediction is an estimate in the dataset's sales units. It is not a business forecast.
+- Cross-validation, external validation and additional business variables are needed before making operational decisions.
 
-### Random Forest Regression
+## Run the notebook
 
-Random Forest Regression was also trained to capture more complex relationships between advertising features and sales.
+Open `CodeAlpha_Sales_Prediction_(2).ipynb` in Jupyter or Google Colab and run all cells from top to bottom.
 
-## Evaluation Metrics
+## Requirements
 
-The models were evaluated using:
-
-- Mean Absolute Error (MAE)
-- Root Mean Squared Error (RMSE)
-- R² Score
-
-## Conclusion
-
-This project shows how advertising data can be analyzed using Python and machine learning. The analysis helps understand how different advertising channels are related to sales. The trained models can also be used to estimate sales for a given advertising budget.
-
+Python 3.10 or later with pandas, numpy, matplotlib, seaborn, scikit-learn, jupyter and nbconvert. The notebook downloads the dataset from the public URL above, so execution requires internet access.
