@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is part of the  Data Science . The main aim of this project is to study the relationship between advertising spending and sales and build a machine learning model to predict sales.
+This project analyses advertising expenditure and sales using exploratory analysis and regression models. The main aim of this project is to study the relationship between advertising spending and sales and build a machine learning model to predict sales.
 
 ## Dataset
 
@@ -65,6 +65,3 @@ The models were evaluated using:
 
 This project shows how advertising data can be analyzed using Python and machine learning. The analysis helps understand how different advertising channels are related to sales. The trained models can also be used to estimate sales for a given advertising budget.
 
-## Project Type
-
-CodeAlpha Data Science Internship - Sales Prediction using Python# CodeAlpha_Sales_Prediction
