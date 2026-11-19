@@ -23,8 +23,9 @@ The notebook validates the required columns, numeric values, missing values and 
 5. Split data into training and test sets (80/20, `random_state=42`).
 6. Train Linear Regression and Random Forest Regression.
 7. Compare MAE, RMSE and R² on the same held-out test set.
-8. Review actual-versus-predicted values and Random Forest feature importance.
-9. Generate one example prediction.
+8. Run an additional shuffled five-fold cross-validation comparison for both models, reporting mean and standard deviation.
+9. Review actual-versus-predicted values and Random Forest feature importance.
+10. Generate one example prediction.
 
 ## Saved evaluation results
 
@@ -43,7 +44,7 @@ These metrics are from one fixed split of a small dataset. Re-run the notebook t
 - Random Forest feature importance is model-specific, not a causal effect.
 - The dataset has only 200 observations and three advertising predictors.
 - The example prediction is an estimate in the dataset's sales units. It is not a business forecast.
-- Cross-validation, external validation and additional business variables are needed before making operational decisions.
+- Five-fold cross-validation provides an additional stability check, but it uses the same 200-row dataset. External validation and additional business variables are still needed before operational decisions.
 
 ## Run the notebook
 
