@@ -22,9 +22,11 @@ The notebook validates the required columns, numeric values, missing values and 
 4. Explore sales distribution, feature relationships and correlations.
 5. Split data into training and test sets (80/20, `random_state=42`).
 6. Train Linear Regression and Random Forest Regression.
-7. Compare MAE, RMSE and R² on the same held-out test set.
-8. Review actual-versus-predicted values and Random Forest feature importance.
-9. Generate one example prediction.
+7. Run five-fold shuffled cross-validation on the training partition only, comparing a mean-prediction baseline, Linear Regression and Random Forest.
+8. Report fold-mean and fold-standard-deviation for MAE, RMSE and R². The held-out test partition is not used during cross-validation.
+9. Compare MAE, RMSE and R² on the same held-out test set.
+10. Review actual-versus-predicted values and Random Forest feature importance.
+11. Generate one example prediction.
 
 ## Saved evaluation results
 
@@ -43,7 +45,9 @@ These metrics are from one fixed split of a small dataset. Re-run the notebook t
 - Random Forest feature importance is model-specific, not a causal effect.
 - The dataset has only 200 observations and three advertising predictors.
 - The example prediction is an estimate in the dataset's sales units. It is not a business forecast.
-- Cross-validation, external validation and additional business variables are needed before making operational decisions.
+- The five-fold cross-validation results are internal estimates from the training partition. Fold variability should be considered alongside the mean scores.
+- The final 20% holdout remains separate from cross-validation. It is evaluated after model fitting and does not provide independent-market validation.
+- External validation and additional business variables are needed before making operational decisions.
 
 ## Run the notebook
 
@@ -52,3 +56,10 @@ Open `CodeAlpha_Sales_Prediction_(2).ipynb` in Jupyter or Google Colab and run a
 ## Requirements
 
 Python 3.10 or later with pandas, numpy, matplotlib, seaborn, scikit-learn, jupyter and nbconvert. The notebook downloads the dataset from the public URL above, so execution requires internet access.
+
+
+## Validation design
+
+The notebook includes a five-fold shuffled cross-validation comparison on the 80% training partition. It evaluates a mean-prediction baseline, Linear Regression and Random Forest with MAE, RMSE and R². Both the mean and sample standard deviation across folds are reported. The final 20% holdout is kept out of cross-validation and remains the final same-source test set.
+
+The cross-validation step reduces reliance on one random training split, but it does not replace time-based or external-market validation. The observations are small and independently sampled in the supplied dataset; no temporal deployment claim is made.
