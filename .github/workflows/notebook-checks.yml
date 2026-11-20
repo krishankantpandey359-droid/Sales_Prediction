@@ -44,3 +44,11 @@ jobs:
           ), "Notebook did not produce any display outputs"
           print(f"Executed {len(code_cells)} code cells; no notebook errors found.")
           PY
+
+      - name: Upload executed notebook
+        uses: actions/upload-artifact@v4
+        with:
+          name: sales-prediction-executed-notebook
+          path: executed_sales_prediction.ipynb
+          if-no-files-found: error
+          retention-days: 30
