@@ -52,4 +52,10 @@ Open `CodeAlpha_Sales_Prediction_(2).ipynb` in Jupyter or Google Colab and run a
 
 ## Requirements
 
-Python 3.10 or later with pandas, numpy, matplotlib, seaborn, scikit-learn, jupyter and nbconvert. The notebook downloads the dataset from the public URL above, so execution requires internet access.
+Python 3.10 or later. Install the packages from the repository root:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+The notebook downloads the dataset from the public URL above, so execution requires internet access.
