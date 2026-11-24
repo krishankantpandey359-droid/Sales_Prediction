@@ -68,3 +68,7 @@ The notebook downloads the dataset from the public URL above, so execution requi
 The notebook includes a five-fold shuffled cross-validation comparison on the 80% training partition. It evaluates a mean-prediction baseline, Linear Regression and Random Forest with MAE, RMSE and R². Both the mean and sample standard deviation across folds are reported. The final 20% holdout is kept out of cross-validation and remains the final same-source test set.
 
 The cross-validation step reduces reliance on one random training split, but it does not replace time-based or external-market validation. The observations are small and independently sampled in the supplied dataset; no temporal deployment claim is made.
+
+## Latest GitHub Actions validation
+
+Latest verified successful main-branch workflow run checked on 24 November 2026: [GitHub Actions run #45312117528](https://github.com/krishankantpandey359-droid/Sales_Prediction/actions/runs/45312117528). This run verifies the checks configured in this repository's workflow; it does not replace manual testing of features outside CI.
